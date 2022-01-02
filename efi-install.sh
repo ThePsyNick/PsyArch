@@ -1,6 +1,5 @@
-loadkeys it
+# Partition the disk and create a EFI (dev/sda1), Swap(dev/sda2) and Root(dev/sda3)
 timedatectl set-ntp true
-# Partition disk with a EFI(dev/sda1), Swap(dev/sda2) and Root(dev/sda3) partition
 mkfs.ext4 /dev/sda3
 mkswap /dev/sda2
 mkfs.fat -F32 /dev/sda1
