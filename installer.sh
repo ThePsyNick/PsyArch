@@ -18,7 +18,7 @@ read hostprompt
 echo $hostprompt >> /mnt/etc/hostname
 echo "Set Password for Root User:"
 passwd
-cd mnt/
+cd /mnt/
 mkdir ./boot/efi
 mount /dev/sda1 ./boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=./boot/efi
