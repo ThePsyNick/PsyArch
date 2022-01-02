@@ -16,9 +16,11 @@ echo "KEYMAP=it" >> /mnt/etc/vconsole.conf
 echo "Set an Hostname for the installation: "
 read hostprompt
 echo $hostprompt >> /mnt/etc/hostname
+echo "Set Password for Root User:"
 passwd
-mkdir /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/mnt/boot/efi
-grub-mkconfig -o /mnt/boot/grub/grub.cfg
+cd mnt/
+mkdir ./boot/efi
+mount /dev/sda1 ./boot/efi
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=./boot/efi
+grub-mkconfig -o ./boot/grub/grub.cfg
 echo "Installation Finished!"
